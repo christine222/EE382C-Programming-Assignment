@@ -1,4 +1,4 @@
-// $Id $
+// $Id$
 
 // Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
 // All rights reserved.
@@ -24,16 +24,20 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
-//
-// Flow control
+// Dragonfly
 //
 
-num_vcs     = 2;
+
+
+
 vc_buf_size = 256;
+
 
 wait_for_tail_credit = 0;
 
+//
+// Router architecture
+//
 vc_allocator = separable_input_first; 
 sw_allocator = separable_input_first;
 alloc_iters  = 1;
@@ -48,80 +52,70 @@ input_speedup     = 1;
 output_speedup    = 1;
 internal_speedup  = 2.0;
 
-//
-// Traffic
-//
-
-sim_type = latency;
 
 warmup_periods = 3;
+sim_count          = 1;
 
 sample_period  = 10000;  
 
-sim_count          = 1;
 
 
+routing_function = ugal;
+num_vcs     = 3;
 
-//topoogy
+priority = none;
+traffic       = uniform; 
 
-topology = mesh;
-k  = 32;
-n  = 2;
-//
-// Routing
-
-
-routing_function = dim_order;
 
 packet_size = 10;
-
-use_read_write = 0;
-
-traffic       = uniform;
 injection_rate_uses_flits=1;
 
+topology = dragonflynew;
+
+k  = 4;
+n  = 1;
+
+watch_out=-;
+
 injection_rate =0.01;
-stats_out = mesh_1.m;
-
-
-
+stats_out = dflyugal_1.m;
 injection_rate =0.05;
-stats_out = mesh_5.m;
+stats_out = dflyugal_5.m;
 injection_rate =0.1;
-stats_out = mesh_10.m;
+stats_out = dflyugal_10.m;
 injection_rate =0.15;
-stats_out = mesh_15.m;
+stats_out = dflyugal_15.m;
 injection_rate =0.2;
-stats_out = mesh_20.m;
+stats_out = dflyugal_20.m;
 injection_rate =0.25;
-stats_out = mesh_25.m;
+stats_out = dflyugal_25.m;
 injection_rate =0.3;
-stats_out = mesh_30.m;
+stats_out = dflyugal_30.m;
 injection_rate =0.35;
-stats_out = mesh_35.m;
+stats_out = dflyugal_35.m;
 injection_rate =0.4;
-stats_out = mesh_40.m;
+stats_out = dflyugal_40.m;
 injection_rate =0.45;
-stats_out = mesh_45.m;
+stats_out = dflyugal_45.m;
 injection_rate =0.5;
-stats_out = mesh_50.m;
+stats_out = dflyugal_50.m;
 injection_rate =0.55;
-stats_out = mesh_55.m;
+stats_out = dflyugal_55.m;
 injection_rate =0.6;
-stats_out = mesh_60.m;
+stats_out = dflyugal_60.m;
 injection_rate =0.65;
-stats_out = mesh_65.m;
+stats_out = dflyugal_65.m;
 injection_rate =0.7;
-stats_out = mesh_70.m;
+stats_out = dflyugal_70.m;
 injection_rate =0.75;
-stats_out = mesh_75.m;
+stats_out = dflyugal_75.m;
 injection_rate =0.8;
-stats_out = mesh_80.m;
+stats_out = dflyugal_80.m;
 injection_rate =0.85;
-stats_out = mesh_85.m;
+stats_out = dflyugal_85.m;
 injection_rate =0.9;
-stats_out = mesh_90.m;
+stats_out = dflyugal_90.m;
 injection_rate =0.95;
-stats_out = mesh_95.m;
+stats_out = dflyugal_95.m;
 injection_rate =1;
-stats_out = mesh_100.m;
+stats_out = dflyugal_100.m;

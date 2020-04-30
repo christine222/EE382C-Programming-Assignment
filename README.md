@@ -1,5 +1,8 @@
-BookSim Interconnection Network Simulator
+Spring 2020 EE382C (Interconnection Networks) Programming Assignment
 =========================================
+
+Code from BookSim Interconnection Network Simulator
+https://github.com/booksim/booksim2
 
 BookSim is a cycle-accurate interconnection network simulator.
 Originally developed for and introduced with the [Principles and Practices of Interconnection Networks](http://cva.stanford.edu/books/ppin/) book, its functionality has since been continuously extended.

@@ -1,0 +1,3257 @@
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 78.3826
+	minimum = 14
+	maximum = 194
+Network latency average = 78.3363
+	minimum = 14
+	maximum = 194
+Slowest packet = 1599
+Flit latency average = 69.0315
+	minimum = 5
+	maximum = 185
+Slowest flit = 15990
+Fragmentation average = 0.516889
+	minimum = 0
+	maximum = 20
+Injected packet rate average = 0.00100303
+	minimum = 0.0002 (at node 754)
+	maximum = 0.0021 (at node 426)
+Accepted packet rate average = 0.000994531
+	minimum = 0.0002 (at node 19)
+	maximum = 0.0022 (at node 986)
+Injected flit rate average = 0.0100269
+	minimum = 0.002 (at node 754)
+	maximum = 0.021 (at node 426)
+Accepted flit rate average= 0.00994883
+	minimum = 0.002 (at node 19)
+	maximum = 0.022 (at node 986)
+Injected packet length average = 9.99659
+Accepted packet length average = 10.0035
+Total in-flight flits = 834 (0 measured)
+latency change    = 1
+throughput change = 1
+Class 0:
+Packet latency average = 78.7262
+	minimum = 14
+	maximum = 194
+Network latency average = 78.6778
+	minimum = 14
+	maximum = 194
+Slowest packet = 1599
+Flit latency average = 69.3816
+	minimum = 5
+	maximum = 185
+Slowest flit = 15990
+Fragmentation average = 0.512479
+	minimum = 0
+	maximum = 20
+Injected packet rate average = 0.0010019
+	minimum = 0.0004 (at node 580)
+	maximum = 0.00165 (at node 442)
+Accepted packet rate average = 0.000997754
+	minimum = 0.00035 (at node 606)
+	maximum = 0.0017 (at node 848)
+Injected flit rate average = 0.0100163
+	minimum = 0.004 (at node 580)
+	maximum = 0.0165 (at node 442)
+Accepted flit rate average= 0.00997915
+	minimum = 0.0035 (at node 606)
+	maximum = 0.017 (at node 848)
+Injected packet length average = 9.99727
+Accepted packet length average = 10.0016
+Total in-flight flits = 817 (0 measured)
+latency change    = 0.00436488
+throughput change = 0.00303856
+Class 0:
+Packet latency average = 78.9982
+	minimum = 14
+	maximum = 197
+Network latency average = 78.9598
+	minimum = 14
+	maximum = 197
+Slowest packet = 24272
+Flit latency average = 69.6532
+	minimum = 5
+	maximum = 188
+Slowest flit = 242720
+Fragmentation average = 0.517153
+	minimum = 0
+	maximum = 17
+Injected packet rate average = 0.000991992
+	minimum = 0.0002 (at node 112)
+	maximum = 0.002 (at node 19)
+Accepted packet rate average = 0.000990625
+	minimum = 0.0002 (at node 427)
+	maximum = 0.002 (at node 186)
+Injected flit rate average = 0.00991885
+	minimum = 0.002 (at node 112)
+	maximum = 0.02 (at node 19)
+Accepted flit rate average= 0.00990508
+	minimum = 0.002 (at node 427)
+	maximum = 0.02 (at node 186)
+Injected packet length average = 9.99892
+Accepted packet length average = 9.99882
+Total in-flight flits = 969 (0 measured)
+latency change    = 0.00344354
+throughput change = 0.00747821
+Warmed up ...Time used is 30000 cycles
+Class 0:
+Packet latency average = 79.054
+	minimum = 14
+	maximum = 198
+Network latency average = 79.0148
+	minimum = 14
+	maximum = 198
+Slowest packet = 35683
+Flit latency average = 69.8921
+	minimum = 5
+	maximum = 189
+Slowest flit = 356830
+Fragmentation average = 0.491379
+	minimum = 0
+	maximum = 19
+Injected packet rate average = 0.000982617
+	minimum = 0.0002 (at node 155)
+	maximum = 0.0026 (at node 415)
+Accepted packet rate average = 0.000983887
+	minimum = 0.0001 (at node 895)
+	maximum = 0.0022 (at node 952)
+Injected flit rate average = 0.00983066
+	minimum = 0.002 (at node 155)
+	maximum = 0.026 (at node 415)
+Accepted flit rate average= 0.0098418
+	minimum = 0.001 (at node 895)
+	maximum = 0.022 (at node 952)
+Injected packet length average = 10.0046
+Accepted packet length average = 10.003
+Total in-flight flits = 809 (809 measured)
+latency change    = 0.000705898
+throughput change = 0.00642985
+Class 0:
+Packet latency average = 78.7389
+	minimum = 14
+	maximum = 198
+Network latency average = 78.6995
+	minimum = 14
+	maximum = 198
+Slowest packet = 35683
+Flit latency average = 69.4894
+	minimum = 5
+	maximum = 189
+Slowest flit = 356830
+Fragmentation average = 0.494607
+	minimum = 0
+	maximum = 19
+Injected packet rate average = 0.000991016
+	minimum = 0.0004 (at node 702)
+	maximum = 0.00185 (at node 80)
+Accepted packet rate average = 0.00099165
+	minimum = 0.00045 (at node 17)
+	maximum = 0.0019 (at node 952)
+Injected flit rate average = 0.00991108
+	minimum = 0.004 (at node 702)
+	maximum = 0.0185 (at node 80)
+Accepted flit rate average= 0.00991836
+	minimum = 0.0045 (at node 17)
+	maximum = 0.019 (at node 952)
+Injected packet length average = 10.0009
+Accepted packet length average = 10.0019
+Total in-flight flits = 801 (801 measured)
+latency change    = 0.00400169
+throughput change = 0.00771927
+Class 0:
+Packet latency average = 78.9269
+	minimum = 14
+	maximum = 198
+Network latency average = 78.885
+	minimum = 14
+	maximum = 198
+Slowest packet = 35683
+Flit latency average = 69.6401
+	minimum = 5
+	maximum = 189
+Slowest flit = 356830
+Fragmentation average = 0.518929
+	minimum = 0
+	maximum = 22
+Injected packet rate average = 0.000997884
+	minimum = 0.0005 (at node 481)
+	maximum = 0.00166667 (at node 723)
+Accepted packet rate average = 0.000998047
+	minimum = 0.000466667 (at node 901)
+	maximum = 0.00186667 (at node 952)
+Injected flit rate average = 0.00997949
+	minimum = 0.005 (at node 481)
+	maximum = 0.0166667 (at node 723)
+Accepted flit rate average= 0.00998154
+	minimum = 0.00466667 (at node 901)
+	maximum = 0.0186667 (at node 952)
+Injected packet length average = 10.0007
+Accepted packet length average = 10.0011
+Total in-flight flits = 886 (886 measured)
+latency change    = 0.00238143
+throughput change = 0.00633004
+Draining all recorded packets ...
+Draining remaining packets ...
+Time taken is 60284 cycles
+====== Overall Traffic Statistics ======
+====== Traffic class 0 ======
+Packet latency average = 78.9637 (1 samples)
+	minimum = 14 (1 samples)
+	maximum = 198 (1 samples)
+Network latency average = 78.9213 (1 samples)
+	minimum = 14 (1 samples)
+	maximum = 198 (1 samples)
+Flit latency average = 69.6655 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 189 (1 samples)
+Fragmentation average = 0.518545 (1 samples)
+	minimum = 0 (1 samples)
+	maximum = 22 (1 samples)
+Injected packet rate average = 0.000997884 (1 samples)
+	minimum = 0.0005 (1 samples)
+	maximum = 0.00166667 (1 samples)
+Accepted packet rate average = 0.000998047 (1 samples)
+	minimum = 0.000466667 (1 samples)
+	maximum = 0.00186667 (1 samples)
+Injected flit rate average = 0.00997949 (1 samples)
+	minimum = 0.005 (1 samples)
+	maximum = 0.0166667 (1 samples)
+Accepted flit rate average = 0.00998154 (1 samples)
+	minimum = 0.00466667 (1 samples)
+	maximum = 0.0186667 (1 samples)
+Injected packet size average = 10.0007 (1 samples)
+Accepted packet size average = 10.0011 (1 samples)
+Hops average = 22.3655 (1 samples)
+Total run time 420.604
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 86.4378
+	minimum = 14
+	maximum = 263
+Network latency average = 86.2044
+	minimum = 14
+	maximum = 263
+Slowest packet = 46784
+Flit latency average = 75.4669
+	minimum = 5
+	maximum = 254
+Slowest flit = 467849
+Fragmentation average = 2.88325
+	minimum = 0
+	maximum = 50
+Injected packet rate average = 0.00499561
+	minimum = 0.0028 (at node 192)
+	maximum = 0.0076 (at node 392)
+Accepted packet rate average = 0.00495342
+	minimum = 0.0031 (at node 597)
+	maximum = 0.0073 (at node 73)
+Injected flit rate average = 0.0499353
+	minimum = 0.028 (at node 192)
+	maximum = 0.076 (at node 392)
+Accepted flit rate average= 0.0495603
+	minimum = 0.031 (at node 597)
+	maximum = 0.073 (at node 73)
+Injected packet length average = 9.99584
+Accepted packet length average = 10.0053
+Total in-flight flits = 4053 (0 measured)
+latency change    = 1
+throughput change = 1
+Class 0:
+Packet latency average = 86.5219
+	minimum = 14
+	maximum = 263
+Network latency average = 86.2912
+	minimum = 14
+	maximum = 263
+Slowest packet = 46784
+Flit latency average = 75.5487
+	minimum = 5
+	maximum = 254
+Slowest flit = 467849
+Fragmentation average = 2.88761
+	minimum = 0
+	maximum = 65
+Injected packet rate average = 0.00500825
+	minimum = 0.00345 (at node 933)
+	maximum = 0.00695 (at node 1016)
+Accepted packet rate average = 0.00498555
+	minimum = 0.00345 (at node 40)
+	maximum = 0.0068 (at node 940)
+Injected flit rate average = 0.0500687
+	minimum = 0.0345 (at node 933)
+	maximum = 0.0694 (at node 1016)
+Accepted flit rate average= 0.0498713
+	minimum = 0.0345 (at node 40)
+	maximum = 0.068 (at node 940)
+Injected packet length average = 9.99724
+Accepted packet length average = 10.0032
+Total in-flight flits = 4326 (0 measured)
+latency change    = 0.000972005
+throughput change = 0.00623676
+Class 0:
+Packet latency average = 86.1577
+	minimum = 14
+	maximum = 261
+Network latency average = 85.9253
+	minimum = 14
+	maximum = 261
+Slowest packet = 127063
+Flit latency average = 75.1776
+	minimum = 5
+	maximum = 252
+Slowest flit = 1270630
+Fragmentation average = 2.8708
+	minimum = 0
+	maximum = 49
+Injected packet rate average = 0.00499199
+	minimum = 0.0028 (at node 13)
+	maximum = 0.0072 (at node 395)
+Accepted packet rate average = 0.0049918
+	minimum = 0.0029 (at node 408)
+	maximum = 0.0075 (at node 0)
+Injected flit rate average = 0.0499272
+	minimum = 0.028 (at node 13)
+	maximum = 0.072 (at node 395)
+Accepted flit rate average= 0.0499228
+	minimum = 0.029 (at node 408)
+	maximum = 0.075 (at node 0)
+Injected packet length average = 10.0015
+Accepted packet length average = 10.001
+Total in-flight flits = 4297 (0 measured)
+latency change    = 0.00422724
+throughput change = 0.00103089
+Warmed up ...Time used is 30000 cycles
+Class 0:
+Packet latency average = 86.1545
+	minimum = 14
+	maximum = 242
+Network latency average = 85.9179
+	minimum = 14
+	maximum = 242
+Slowest packet = 154865
+Flit latency average = 75.3198
+	minimum = 5
+	maximum = 233
+Slowest flit = 1548659
+Fragmentation average = 2.84623
+	minimum = 0
+	maximum = 52
+Injected packet rate average = 0.00497881
+	minimum = 0.0025 (at node 66)
+	maximum = 0.0074 (at node 944)
+Accepted packet rate average = 0.0049832
+	minimum = 0.0027 (at node 217)
+	maximum = 0.0073 (at node 450)
+Injected flit rate average = 0.0497874
+	minimum = 0.025 (at node 66)
+	maximum = 0.074 (at node 944)
+Accepted flit rate average= 0.0498226
+	minimum = 0.027 (at node 217)
+	maximum = 0.073 (at node 450)
+Injected packet length average = 9.99986
+Accepted packet length average = 9.9981
+Total in-flight flits = 3944 (3944 measured)
+latency change    = 3.70694e-05
+throughput change = 0.00201104
+Class 0:
+Packet latency average = 86.09
+	minimum = 14
+	maximum = 254
+Network latency average = 85.8573
+	minimum = 14
+	maximum = 254
+Slowest packet = 236661
+Flit latency average = 75.1968
+	minimum = 5
+	maximum = 245
+Slowest flit = 2366610
+Fragmentation average = 2.85933
+	minimum = 0
+	maximum = 63
+Injected packet rate average = 0.0049729
+	minimum = 0.00355 (at node 451)
+	maximum = 0.00665 (at node 789)
+Accepted packet rate average = 0.00497256
+	minimum = 0.00355 (at node 413)
+	maximum = 0.0065 (at node 374)
+Injected flit rate average = 0.0497259
+	minimum = 0.0355 (at node 451)
+	maximum = 0.0665 (at node 789)
+Accepted flit rate average= 0.0497234
+	minimum = 0.0355 (at node 413)
+	maximum = 0.065 (at node 374)
+Injected packet length average = 9.99938
+Accepted packet length average = 9.99957
+Total in-flight flits = 4411 (4411 measured)
+latency change    = 0.000749679
+throughput change = 0.00199345
+Class 0:
+Packet latency average = 86.1621
+	minimum = 14
+	maximum = 278
+Network latency average = 85.9289
+	minimum = 14
+	maximum = 278
+Slowest packet = 290791
+Flit latency average = 75.2364
+	minimum = 5
+	maximum = 269
+Slowest flit = 2907918
+Fragmentation average = 2.86664
+	minimum = 0
+	maximum = 63
+Injected packet rate average = 0.00498721
+	minimum = 0.00376667 (at node 463)
+	maximum = 0.0067 (at node 764)
+Accepted packet rate average = 0.00498796
+	minimum = 0.00376667 (at node 739)
+	maximum = 0.00636667 (at node 727)
+Injected flit rate average = 0.0498711
+	minimum = 0.0375667 (at node 463)
+	maximum = 0.067 (at node 764)
+Accepted flit rate average= 0.0498795
+	minimum = 0.0376667 (at node 739)
+	maximum = 0.0636667 (at node 727)
+Injected packet length average = 9.9998
+Accepted packet length average = 9.99999
+Total in-flight flits = 4068 (4068 measured)
+latency change    = 0.000836964
+throughput change = 0.00312928
+Draining all recorded packets ...
+Draining remaining packets ...
+Time taken is 60387 cycles
+====== Overall Traffic Statistics ======
+====== Traffic class 0 ======
+Packet latency average = 86.1891 (1 samples)
+	minimum = 14 (1 samples)
+	maximum = 278 (1 samples)
+Network latency average = 85.9558 (1 samples)
+	minimum = 14 (1 samples)
+	maximum = 278 (1 samples)
+Flit latency average = 75.2567 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 269 (1 samples)
+Fragmentation average = 2.8664 (1 samples)
+	minimum = 0 (1 samples)
+	maximum = 63 (1 samples)
+Injected packet rate average = 0.00498721 (1 samples)
+	minimum = 0.00376667 (1 samples)
+	maximum = 0.0067 (1 samples)
+Accepted packet rate average = 0.00498796 (1 samples)
+	minimum = 0.00376667 (1 samples)
+	maximum = 0.00636667 (1 samples)
+Injected flit rate average = 0.0498711 (1 samples)
+	minimum = 0.0375667 (1 samples)
+	maximum = 0.067 (1 samples)
+Accepted flit rate average = 0.0498795 (1 samples)
+	minimum = 0.0376667 (1 samples)
+	maximum = 0.0636667 (1 samples)
+Injected packet size average = 9.9998 (1 samples)
+Accepted packet size average = 9.99999 (1 samples)
+Hops average = 22.2833 (1 samples)
+Total run time 1308.95
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 130.881
+	minimum = 14
+	maximum = 634
+Network latency average = 130.37
+	minimum = 14
+	maximum = 634
+Slowest packet = 33934
+Flit latency average = 118.177
+	minimum = 5
+	maximum = 625
+Slowest flit = 339344
+Fragmentation average = 5.17464
+	minimum = 0
+	maximum = 114
+Injected packet rate average = 0.0100041
+	minimum = 0.0069 (at node 806)
+	maximum = 0.0132 (at node 145)
+Accepted packet rate average = 0.00987656
+	minimum = 0.0069 (at node 40)
+	maximum = 0.0134 (at node 940)
+Injected flit rate average = 0.0999949
+	minimum = 0.069 (at node 806)
+	maximum = 0.132 (at node 145)
+Accepted flit rate average= 0.0988549
+	minimum = 0.069 (at node 40)
+	maximum = 0.134 (at node 940)
+Injected packet length average = 9.99539
+Accepted packet length average = 10.009
+Total in-flight flits = 12146 (0 measured)
+latency change    = 1
+throughput change = 1
+Class 0:
+Packet latency average = 131.368
+	minimum = 14
+	maximum = 634
+Network latency average = 130.865
+	minimum = 14
+	maximum = 634
+Slowest packet = 33934
+Flit latency average = 118.657
+	minimum = 5
+	maximum = 625
+Slowest flit = 339344
+Fragmentation average = 5.18479
+	minimum = 0
+	maximum = 126
+Injected packet rate average = 0.010017
+	minimum = 0.00765 (at node 461)
+	maximum = 0.01235 (at node 234)
+Accepted packet rate average = 0.00995054
+	minimum = 0.0079 (at node 162)
+	maximum = 0.01235 (at node 941)
+Injected flit rate average = 0.100148
+	minimum = 0.0765 (at node 461)
+	maximum = 0.1235 (at node 234)
+Accepted flit rate average= 0.099541
+	minimum = 0.079 (at node 162)
+	maximum = 0.1235 (at node 941)
+Injected packet length average = 9.99775
+Accepted packet length average = 10.0036
+Total in-flight flits = 12891 (0 measured)
+latency change    = 0.00370022
+throughput change = 0.00689248
+Class 0:
+Packet latency average = 131.248
+	minimum = 14
+	maximum = 589
+Network latency average = 130.75
+	minimum = 14
+	maximum = 589
+Slowest packet = 206907
+Flit latency average = 118.547
+	minimum = 5
+	maximum = 580
+Slowest flit = 2069078
+Fragmentation average = 5.19079
+	minimum = 0
+	maximum = 115
+Injected packet rate average = 0.0100074
+	minimum = 0.0068 (at node 37)
+	maximum = 0.0132 (at node 290)
+Accepted packet rate average = 0.010003
+	minimum = 0.0074 (at node 739)
+	maximum = 0.0134 (at node 198)
+Injected flit rate average = 0.100075
+	minimum = 0.068 (at node 37)
+	maximum = 0.132 (at node 290)
+Accepted flit rate average= 0.10004
+	minimum = 0.074 (at node 739)
+	maximum = 0.133 (at node 198)
+Injected packet length average = 10.0001
+Accepted packet length average = 10.001
+Total in-flight flits = 13241 (0 measured)
+latency change    = 0.000911872
+throughput change = 0.00498873
+Warmed up ...Time used is 30000 cycles
+Class 0:
+Packet latency average = 131.526
+	minimum = 14
+	maximum = 579
+Network latency average = 131.026
+	minimum = 14
+	maximum = 579
+Slowest packet = 402693
+Flit latency average = 119.356
+	minimum = 5
+	maximum = 570
+Slowest flit = 4026939
+Fragmentation average = 5.19058
+	minimum = 0
+	maximum = 104
+Injected packet rate average = 0.00996328
+	minimum = 0.0068 (at node 223)
+	maximum = 0.0145 (at node 633)
+Accepted packet rate average = 0.00997451
+	minimum = 0.0067 (at node 639)
+	maximum = 0.0132 (at node 596)
+Injected flit rate average = 0.0996336
+	minimum = 0.068 (at node 223)
+	maximum = 0.1441 (at node 633)
+Accepted flit rate average= 0.0997362
+	minimum = 0.067 (at node 639)
+	maximum = 0.132 (at node 596)
+Injected packet length average = 10.0001
+Accepted packet length average = 9.99911
+Total in-flight flits = 12182 (12182 measured)
+latency change    = 0.00211626
+throughput change = 0.00304612
+Class 0:
+Packet latency average = 130.419
+	minimum = 14
+	maximum = 579
+Network latency average = 129.919
+	minimum = 14
+	maximum = 579
+Slowest packet = 402693
+Flit latency average = 117.992
+	minimum = 5
+	maximum = 570
+Slowest flit = 4026939
+Fragmentation average = 5.17914
+	minimum = 0
+	maximum = 122
+Injected packet rate average = 0.00995308
+	minimum = 0.00785 (at node 540)
+	maximum = 0.01315 (at node 633)
+Accepted packet rate average = 0.00995405
+	minimum = 0.008 (at node 532)
+	maximum = 0.0128 (at node 312)
+Injected flit rate average = 0.09953
+	minimum = 0.0785 (at node 540)
+	maximum = 0.1315 (at node 633)
+Accepted flit rate average= 0.0995379
+	minimum = 0.08 (at node 532)
+	maximum = 0.128 (at node 312)
+Injected packet length average = 9.99992
+Accepted packet length average = 9.99974
+Total in-flight flits = 13095 (13095 measured)
+latency change    = 0.00848765
+throughput change = 0.00199261
+Class 0:
+Packet latency average = 131.695
+	minimum = 14
+	maximum = 617
+Network latency average = 131.191
+	minimum = 14
+	maximum = 613
+Slowest packet = 580454
+Flit latency average = 119.162
+	minimum = 5
+	maximum = 604
+Slowest flit = 5804549
+Fragmentation average = 5.17954
+	minimum = 0
+	maximum = 122
+Injected packet rate average = 0.0099804
+	minimum = 0.00843333 (at node 380)
+	maximum = 0.0124667 (at node 633)
+Accepted packet rate average = 0.00998197
+	minimum = 0.0083 (at node 36)
+	maximum = 0.0119667 (at node 312)
+Injected flit rate average = 0.0998028
+	minimum = 0.0843333 (at node 380)
+	maximum = 0.124667 (at node 633)
+Accepted flit rate average= 0.0998183
+	minimum = 0.0826 (at node 36)
+	maximum = 0.119667 (at node 312)
+Injected packet length average = 9.99988
+Accepted packet length average = 9.99986
+Total in-flight flits = 12804 (12804 measured)
+latency change    = 0.00968891
+throughput change = 0.00280882
+Draining all recorded packets ...
+Draining remaining packets ...
+Time taken is 60643 cycles
+====== Overall Traffic Statistics ======
+====== Traffic class 0 ======
+Packet latency average = 131.856 (1 samples)
+	minimum = 14 (1 samples)
+	maximum = 617 (1 samples)
+Network latency average = 131.351 (1 samples)
+	minimum = 14 (1 samples)
+	maximum = 613 (1 samples)
+Flit latency average = 119.325 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 604 (1 samples)
+Fragmentation average = 5.18192 (1 samples)
+	minimum = 0 (1 samples)
+	maximum = 122 (1 samples)
+Injected packet rate average = 0.0099804 (1 samples)
+	minimum = 0.00843333 (1 samples)
+	maximum = 0.0124667 (1 samples)
+Accepted packet rate average = 0.00998197 (1 samples)
+	minimum = 0.0083 (1 samples)
+	maximum = 0.0119667 (1 samples)
+Injected flit rate average = 0.0998028 (1 samples)
+	minimum = 0.0843333 (1 samples)
+	maximum = 0.124667 (1 samples)
+Accepted flit rate average = 0.0998183 (1 samples)
+	minimum = 0.0826 (1 samples)
+	maximum = 0.119667 (1 samples)
+Injected packet size average = 9.99988 (1 samples)
+Accepted packet size average = 9.99986 (1 samples)
+Hops average = 22.3468 (1 samples)
+Total run time 2121.26
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 878.131
+	minimum = 14
+	maximum = 4727
+Network latency average = 877.342
+	minimum = 14
+	maximum = 4727
+Slowest packet = 75397
+Flit latency average = 865.304
+	minimum = 5
+	maximum = 4718
+Slowest flit = 753979
+Fragmentation average = 5.94636
+	minimum = 0
+	maximum = 208
+Injected packet rate average = 0.0149965
+	minimum = 0.011 (at node 115)
+	maximum = 0.0196 (at node 188)
+Accepted packet rate average = 0.0124478
+	minimum = 0.0094 (at node 913)
+	maximum = 0.0167 (at node 1016)
+Injected flit rate average = 0.149891
+	minimum = 0.11 (at node 115)
+	maximum = 0.196 (at node 188)
+Accepted flit rate average= 0.124585
+	minimum = 0.094 (at node 913)
+	maximum = 0.167 (at node 1016)
+Injected packet length average = 9.99509
+Accepted packet length average = 10.0086
+Total in-flight flits = 259890 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 233.395
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 1538
+	minimum = 14
+	maximum = 7401
+Network latency average = 1536.88
+	minimum = 14
+	maximum = 7401
+Slowest packet = 52503
+Flit latency average = 1525.3
+	minimum = 5
+	maximum = 7392
+Slowest flit = 525039
+Fragmentation average = 6.12113
+	minimum = 0
+	maximum = 238
+Injected packet rate average = 0.0199896
+	minimum = 0.0158 (at node 200)
+	maximum = 0.0244 (at node 79)
+Accepted packet rate average = 0.012789
+	minimum = 0.0096 (at node 409)
+	maximum = 0.017 (at node 186)
+Injected flit rate average = 0.199807
+	minimum = 0.158 (at node 200)
+	maximum = 0.244 (at node 79)
+Accepted flit rate average= 0.127979
+	minimum = 0.096 (at node 409)
+	maximum = 0.17 (at node 186)
+Injected packet length average = 9.99553
+Accepted packet length average = 10.007
+Total in-flight flits = 736438 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 341.258
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 1828.21
+	minimum = 14
+	maximum = 8485
+Network latency average = 1826.71
+	minimum = 14
+	maximum = 8485
+Slowest packet = 37124
+Flit latency average = 1815.34
+	minimum = 5
+	maximum = 8603
+Slowest flit = 356924
+Fragmentation average = 6.17291
+	minimum = 0
+	maximum = 366
+Injected packet rate average = 0.0224247
+	minimum = 0.0138 (at node 507)
+	maximum = 0.0291 (at node 811)
+Accepted packet rate average = 0.012692
+	minimum = 0.0095 (at node 292)
+	maximum = 0.0164 (at node 898)
+Injected flit rate average = 0.223994
+	minimum = 0.1378 (at node 507)
+	maximum = 0.291 (at node 811)
+Accepted flit rate average= 0.127021
+	minimum = 0.095 (at node 292)
+	maximum = 0.164 (at node 898)
+Injected packet length average = 9.9887
+Accepted packet length average = 10.008
+Total in-flight flits = 995594 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 274.974
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 1958.68
+	minimum = 14
+	maximum = 9138
+Network latency average = 1956.76
+	minimum = 14
+	maximum = 9138
+Slowest packet = 26285
+Flit latency average = 1944.99
+	minimum = 5
+	maximum = 9129
+Slowest flit = 262857
+Fragmentation average = 6.12728
+	minimum = 0
+	maximum = 399
+Injected packet rate average = 0.0227131
+	minimum = 0.0124 (at node 356)
+	maximum = 0.0348 (at node 562)
+Accepted packet rate average = 0.0122806
+	minimum = 0.009 (at node 653)
+	maximum = 0.0163 (at node 186)
+Injected flit rate average = 0.226796
+	minimum = 0.1236 (at node 356)
+	maximum = 0.348 (at node 562)
+Accepted flit rate average= 0.122895
+	minimum = 0.09 (at node 653)
+	maximum = 0.1634 (at node 186)
+Injected packet length average = 9.98526
+Accepted packet length average = 10.0072
+Total in-flight flits = 1067380 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 398.699
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 2009.15
+	minimum = 14
+	maximum = 9617
+Network latency average = 2006.6
+	minimum = 14
+	maximum = 9613
+Slowest packet = 11152
+Flit latency average = 1994.95
+	minimum = 5
+	maximum = 9604
+Slowest flit = 111529
+Fragmentation average = 6.04694
+	minimum = 0
+	maximum = 782
+Injected packet rate average = 0.0224355
+	minimum = 0.0109 (at node 835)
+	maximum = 0.0392 (at node 269)
+Accepted packet rate average = 0.0117872
+	minimum = 0.0083 (at node 400)
+	maximum = 0.0158 (at node 323)
+Injected flit rate average = 0.22398
+	minimum = 0.1088 (at node 835)
+	maximum = 0.392 (at node 269)
+Accepted flit rate average= 0.117949
+	minimum = 0.0831 (at node 400)
+	maximum = 0.158 (at node 323)
+Injected packet length average = 9.98327
+Accepted packet length average = 10.0066
+Total in-flight flits = 1089599 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 390.883
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 2047.12
+	minimum = 14
+	maximum = 9701
+Network latency average = 2042.41
+	minimum = 14
+	maximum = 9701
+Slowest packet = 11371
+Flit latency average = 2030.37
+	minimum = 5
+	maximum = 9692
+Slowest flit = 113713
+Fragmentation average = 5.99632
+	minimum = 0
+	maximum = 601
+Injected packet rate average = 0.0221628
+	minimum = 0.0112 (at node 355)
+	maximum = 0.0458 (at node 529)
+Accepted packet rate average = 0.0114258
+	minimum = 0.0079 (at node 278)
+	maximum = 0.016 (at node 61)
+Injected flit rate average = 0.221229
+	minimum = 0.1116 (at node 355)
+	maximum = 0.458 (at node 529)
+Accepted flit rate average= 0.114328
+	minimum = 0.079 (at node 278)
+	maximum = 0.16 (at node 61)
+Injected packet length average = 9.98199
+Accepted packet length average = 10.0062
+Total in-flight flits = 1098759 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 354.114
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 2145.83
+	minimum = 14
+	maximum = 9816
+Network latency average = 2132.81
+	minimum = 14
+	maximum = 9816
+Slowest packet = 5749
+Flit latency average = 2120.55
+	minimum = 5
+	maximum = 9807
+Slowest flit = 57499
+Fragmentation average = 5.9765
+	minimum = 0
+	maximum = 1034
+Injected packet rate average = 0.0220165
+	minimum = 0.0103 (at node 60)
+	maximum = 0.0516 (at node 336)
+Accepted packet rate average = 0.0111243
+	minimum = 0.0076 (at node 144)
+	maximum = 0.0156 (at node 702)
+Injected flit rate average = 0.21975
+	minimum = 0.1022 (at node 355)
+	maximum = 0.516 (at node 336)
+Accepted flit rate average= 0.111311
+	minimum = 0.076 (at node 144)
+	maximum = 0.156 (at node 702)
+Injected packet length average = 9.98115
+Accepted packet length average = 10.0061
+Total in-flight flits = 1114670 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 319.963
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+injection_rate =0.5;
+stats_out = mesh_50.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 2240.21
+	minimum = 14
+	maximum = 9823
+Network latency average = 2213.42
+	minimum = 14
+	maximum = 9823
+Slowest packet = 7772
+Flit latency average = 2201.09
+	minimum = 5
+	maximum = 9814
+Slowest flit = 77729
+Fragmentation average = 5.96565
+	minimum = 0
+	maximum = 1665
+Injected packet rate average = 0.0219354
+	minimum = 0.01 (at node 987)
+	maximum = 0.0544 (at node 848)
+Accepted packet rate average = 0.0108924
+	minimum = 0.0076 (at node 587)
+	maximum = 0.0157 (at node 321)
+Injected flit rate average = 0.218926
+	minimum = 0.0998 (at node 987)
+	maximum = 0.544 (at node 848)
+Accepted flit rate average= 0.108984
+	minimum = 0.076 (at node 587)
+	maximum = 0.157 (at node 321)
+Injected packet length average = 9.98049
+Accepted packet length average = 10.0055
+Total in-flight flits = 1130184 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 367.753
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+injection_rate =0.5;
+stats_out = mesh_50.m;
+injection_rate =0.55;
+stats_out = mesh_55.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 2330.73
+	minimum = 14
+	maximum = 9887
+Network latency average = 2277.05
+	minimum = 14
+	maximum = 9879
+Slowest packet = 3419
+Flit latency average = 2264.71
+	minimum = 5
+	maximum = 9897
+Slowest flit = 49788
+Fragmentation average = 5.93907
+	minimum = 0
+	maximum = 992
+Injected packet rate average = 0.0218979
+	minimum = 0.0106 (at node 34)
+	maximum = 0.0575 (at node 432)
+Accepted packet rate average = 0.0108065
+	minimum = 0.0075 (at node 818)
+	maximum = 0.0147 (at node 61)
+Injected flit rate average = 0.218545
+	minimum = 0.1056 (at node 34)
+	maximum = 0.5744 (at node 432)
+Accepted flit rate average= 0.108131
+	minimum = 0.075 (at node 818)
+	maximum = 0.147 (at node 61)
+Injected packet length average = 9.98018
+Accepted packet length average = 10.0061
+Total in-flight flits = 1135097 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 352.295
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+injection_rate =0.5;
+stats_out = mesh_50.m;
+injection_rate =0.55;
+stats_out = mesh_55.m;
+injection_rate =0.6;
+stats_out = mesh_60.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 2446.66
+	minimum = 14
+	maximum = 9891
+Network latency average = 2356.4
+	minimum = 14
+	maximum = 9891
+Slowest packet = 6094
+Flit latency average = 2343.81
+	minimum = 5
+	maximum = 9891
+Slowest flit = 59015
+Fragmentation average = 5.86158
+	minimum = 0
+	maximum = 1345
+Injected packet rate average = 0.0217307
+	minimum = 0.0101 (at node 642)
+	maximum = 0.0584 (at node 208)
+Accepted packet rate average = 0.0106323
+	minimum = 0.0067 (at node 327)
+	maximum = 0.0152 (at node 796)
+Injected flit rate average = 0.21687
+	minimum = 0.1006 (at node 642)
+	maximum = 0.5831 (at node 208)
+Accepted flit rate average= 0.106388
+	minimum = 0.067 (at node 327)
+	maximum = 0.152 (at node 796)
+Injected packet length average = 9.9799
+Accepted packet length average = 10.0061
+Total in-flight flits = 1135804 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 359.437
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+injection_rate =0.5;
+stats_out = mesh_50.m;
+injection_rate =0.55;
+stats_out = mesh_55.m;
+injection_rate =0.6;
+stats_out = mesh_60.m;
+injection_rate =0.65;
+stats_out = mesh_65.m;
+
+END Configuration File: ../runfiles/meshconfig
+Class 0:
+Packet latency average = 2590.63
+	minimum = 14
+	maximum = 9952
+Network latency average = 2441.29
+	minimum = 14
+	maximum = 9952
+Slowest packet = 283
+Flit latency average = 2428.43
+	minimum = 5
+	maximum = 9943
+Slowest flit = 2839
+Fragmentation average = 5.86959
+	minimum = 0
+	maximum = 980
+Injected packet rate average = 0.0216132
+	minimum = 0.0102 (at node 701)
+	maximum = 0.0603 (at node 208)
+Accepted packet rate average = 0.0105035
+	minimum = 0.0072 (at node 809)
+	maximum = 0.015 (at node 285)
+Injected flit rate average = 0.215703
+	minimum = 0.1016 (at node 701)
+	maximum = 0.6026 (at node 208)
+Accepted flit rate average= 0.105108
+	minimum = 0.072 (at node 809)
+	maximum = 0.15 (at node 285)
+Injected packet length average = 9.98014
+Accepted packet length average = 10.007
+Total in-flight flits = 1136892 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 362.978
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+injection_rate =0.5;
+stats_out = mesh_50.m;
+injection_rate =0.55;
+stats_out = mesh_55.m;
+injection_rate =0.6;
+stats_out = mesh_60.m;
+injection_rate =0.65;
+stats_out = mesh_65.m;
+injection_rate =0.7;
+stats_out = mesh_70.m;
+
+END Configuration File: ../runfiles/meshconfig
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+injection_rate =0.5;
+stats_out = mesh_50.m;
+injection_rate =0.55;
+stats_out = mesh_55.m;
+injection_rate =0.6;
+stats_out = mesh_60.m;
+injection_rate =0.65;
+stats_out = mesh_65.m;
+injection_rate =0.7;
+stats_out = mesh_70.m;
+injection_rate =0.75;
+stats_out = mesh_75.m;
+
+END Configuration File: ../runfiles/meshconfig
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+injection_rate =0.5;
+stats_out = mesh_50.m;
+injection_rate =0.55;
+stats_out = mesh_55.m;
+injection_rate =0.6;
+stats_out = mesh_60.m;
+injection_rate =0.65;
+stats_out = mesh_65.m;
+injection_rate =0.7;
+stats_out = mesh_70.m;
+injection_rate =0.75;
+stats_out = mesh_75.m;
+injection_rate =0.8;
+stats_out = mesh_80.m;
+
+END Configuration File: ../runfiles/meshconfig
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+injection_rate =0.5;
+stats_out = mesh_50.m;
+injection_rate =0.55;
+stats_out = mesh_55.m;
+injection_rate =0.6;
+stats_out = mesh_60.m;
+injection_rate =0.65;
+stats_out = mesh_65.m;
+injection_rate =0.7;
+stats_out = mesh_70.m;
+injection_rate =0.75;
+stats_out = mesh_75.m;
+injection_rate =0.8;
+stats_out = mesh_80.m;
+injection_rate =0.85;
+stats_out = mesh_85.m;
+
+END Configuration File: ../runfiles/meshconfig
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+injection_rate =0.5;
+stats_out = mesh_50.m;
+injection_rate =0.55;
+stats_out = mesh_55.m;
+injection_rate =0.6;
+stats_out = mesh_60.m;
+injection_rate =0.65;
+stats_out = mesh_65.m;
+injection_rate =0.7;
+stats_out = mesh_70.m;
+injection_rate =0.75;
+stats_out = mesh_75.m;
+injection_rate =0.8;
+stats_out = mesh_80.m;
+injection_rate =0.85;
+stats_out = mesh_85.m;
+injection_rate =0.9;
+stats_out = mesh_90.m;
+
+END Configuration File: ../runfiles/meshconfig
+BEGIN Configuration File: ../runfiles/meshconfig
+// $Id $
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+
+//
+// Flow control
+//
+
+num_vcs     = 2;
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+//
+// Traffic
+//
+
+sim_type = latency;
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 1;
+
+
+
+//topoogy
+
+topology = mesh;
+k  = 32;
+n  = 2;
+//
+// Routing
+
+
+routing_function = dim_order;
+
+packet_size = 10;
+
+use_read_write = 0;
+
+traffic       = uniform;
+injection_rate_uses_flits=1;
+
+injection_rate =0.01;
+stats_out = mesh_1.m;
+
+
+
+injection_rate =0.05;
+stats_out = mesh_5.m;
+injection_rate =0.1;
+stats_out = mesh_10.m;
+injection_rate =0.15;
+stats_out = mesh_15.m;
+injection_rate =0.2;
+stats_out = mesh_20.m;
+injection_rate =0.25;
+stats_out = mesh_25.m;
+injection_rate =0.3;
+stats_out = mesh_30.m;
+injection_rate =0.35;
+stats_out = mesh_35.m;
+injection_rate =0.4;
+stats_out = mesh_40.m;
+injection_rate =0.45;
+stats_out = mesh_45.m;
+injection_rate =0.5;
+stats_out = mesh_50.m;
+injection_rate =0.55;
+stats_out = mesh_55.m;
+injection_rate =0.6;
+stats_out = mesh_60.m;
+injection_rate =0.65;
+stats_out = mesh_65.m;
+injection_rate =0.7;
+stats_out = mesh_70.m;
+injection_rate =0.75;
+stats_out = mesh_75.m;
+injection_rate =0.8;
+stats_out = mesh_80.m;
+injection_rate =0.85;
+stats_out = mesh_85.m;
+injection_rate =0.9;
+stats_out = mesh_90.m;
+injection_rate =0.95;
+stats_out = mesh_95.m;
+
+END Configuration File: ../runfiles/meshconfig
+86.1891
+131.856
+878.131
