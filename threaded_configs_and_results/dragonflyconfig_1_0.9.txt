@@ -1,0 +1,160 @@
+BEGIN Configuration File: examples/dragonflyconfig_1_0.9
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+
+routing_function = min;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.9;
+packet_size = 10;
+injection_rate_uses_flits = 1;
+
+topology = dragonflynew;
+
+k  = 4;
+n  = 1;
+
+watch_out=-;
+
+stats_out = examples/dragonflyconfig_1_0.9.m;
+
+END Configuration File: examples/dragonflyconfig_1_0.9
+ Dragonfly 
+ p = 4 n = 1
+ each switch - total radix =  15
+ # of switches = 264
+ # of channels = 2904
+ # of nodes ( size of network ) = 1056
+ # of groups (_g) = 33
+ # of routers per group (_a) = 8
+Done links
+Class 0:
+Packet latency average = 395.101
+	minimum = 14
+	maximum = 2311
+Network latency average = 350.468
+	minimum = 14
+	maximum = 2122
+Slowest packet = 263358
+Flit latency average = 341.114
+	minimum = 5
+	maximum = 2113
+Slowest flit = 6113810
+Fragmentation average = 0.670137
+	minimum = 0
+	maximum = 27
+Injected packet rate average = 0.089265
+	minimum = 0.0803 (at node 43)
+	maximum = 0.099 (at node 217)
+Accepted packet rate average = 0.0854187
+	minimum = 0.077 (at node 752)
+	maximum = 0.0933 (at node 367)
+Injected flit rate average = 0.892254
+	minimum = 0.8028 (at node 43)
+	maximum = 0.9892 (at node 217)
+Accepted flit rate average= 0.854614
+	minimum = 0.7709 (at node 752)
+	maximum = 0.933 (at node 367)
+Injected packet length average = 9.99556
+Accepted packet length average = 10.005
+Total in-flight flits = 401657 (0 measured)
+latency change    = 1
+throughput change = 1
+Class 0:
+Packet latency average = 498.515
+	minimum = 14
+	maximum = 3503
+Network latency average = 416.906
+	minimum = 14
+	maximum = 2455
+Slowest packet = 263358
+Flit latency average = 407.493
+	minimum = 5
+	maximum = 2446
+Slowest flit = 14820910
+Fragmentation average = 0.647401
+	minimum = 0
+	maximum = 27
+Injected packet rate average = 0.0891464
+	minimum = 0.08065 (at node 468)
+	maximum = 0.09765 (at node 217)
+Accepted packet rate average = 0.0868549
+	minimum = 0.08015 (at node 752)
+	maximum = 0.09395 (at node 139)
+Injected flit rate average = 0.891254
+	minimum = 0.8063 (at node 468)
+	maximum = 0.97615 (at node 217)
+Accepted flit rate average= 0.868769
+	minimum = 0.80175 (at node 752)
+	maximum = 0.9397 (at node 139)
+Injected packet length average = 9.99763
+Accepted packet length average = 10.0025
+Total in-flight flits = 479330 (0 measured)
+latency change    = 0.207445
+throughput change = 0.0162932
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 1073.45

@@ -1,0 +1,128 @@
+BEGIN Configuration File: examples/dragonflyconfig_1_0.95
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+
+routing_function = min;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.95;
+packet_size = 10;
+injection_rate_uses_flits = 1;
+
+topology = dragonflynew;
+
+k  = 4;
+n  = 1;
+
+watch_out=-;
+
+stats_out = examples/dragonflyconfig_1_0.95.m;
+
+END Configuration File: examples/dragonflyconfig_1_0.95
+ Dragonfly 
+ p = 4 n = 1
+ each switch - total radix =  15
+ # of switches = 264
+ # of channels = 2904
+ # of nodes ( size of network ) = 1056
+ # of groups (_g) = 33
+ # of routers per group (_a) = 8
+Done links
+Class 0:
+Packet latency average = 581.97
+	minimum = 14
+	maximum = 2932
+Network latency average = 467.504
+	minimum = 14
+	maximum = 2519
+Slowest packet = 267489
+Flit latency average = 458.098
+	minimum = 5
+	maximum = 2510
+Slowest flit = 6385240
+Fragmentation average = 0.651008
+	minimum = 0
+	maximum = 28
+Injected packet rate average = 0.0917375
+	minimum = 0.0761 (at node 476)
+	maximum = 0.0995 (at node 561)
+Accepted packet rate average = 0.0862194
+	minimum = 0.0766 (at node 193)
+	maximum = 0.0968 (at node 147)
+Injected flit rate average = 0.916935
+	minimum = 0.7608 (at node 476)
+	maximum = 0.9946 (at node 561)
+Accepted flit rate average= 0.862624
+	minimum = 0.7669 (at node 193)
+	maximum = 0.9687 (at node 147)
+Injected packet length average = 9.99521
+Accepted packet length average = 10.005
+Total in-flight flits = 578184 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 623.925

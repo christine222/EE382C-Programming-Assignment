@@ -1,0 +1,119 @@
+BEGIN Configuration File: examples/meshconfig_1_0.20
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Mesh
+//
+
+
+
+
+vc_buf_size = 8;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+
+routing_function = dor;
+num_vcs     = 8;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.20;
+packet_size = 10;
+injection_rate_uses_flits = 1;
+
+topology = mesh;
+
+k  = 32;
+n  = 2;
+
+watch_out=-;
+
+stats_out = examples/meshconfig_1_0.20.m;
+
+END Configuration File: examples/meshconfig_1_0.20
+Class 0:
+Packet latency average = 1123.14
+	minimum = 14
+	maximum = 8999
+Network latency average = 721.175
+	minimum = 14
+	maximum = 8999
+Slowest packet = 19721
+Flit latency average = 680.256
+	minimum = 4
+	maximum = 8975
+Slowest flit = 197217
+Fragmentation average = 44.5743
+	minimum = 0
+	maximum = 273
+Injected packet rate average = 0.0126243
+	minimum = 0.0029 (at node 353)
+	maximum = 0.0236 (at node 844)
+Accepted packet rate average = 0.0115699
+	minimum = 0.0084 (at node 868)
+	maximum = 0.0159 (at node 1016)
+Injected flit rate average = 0.126022
+	minimum = 0.0288 (at node 353)
+	maximum = 0.236 (at node 844)
+Accepted flit rate average= 0.11605
+	minimum = 0.0843 (at node 868)
+	maximum = 0.1592 (at node 1016)
+Injected packet length average = 9.98251
+Accepted packet length average = 10.0303
+Total in-flight flits = 104381 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 197.441
