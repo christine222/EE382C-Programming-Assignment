@@ -61,16 +61,17 @@ routing_function = nca;
 num_vcs     = 4;
 
 priority = none;
-traffic       = uniform;
+traffic = uniform;
+t = 1;
 
-injection_rate = 0.6;
+injection_rate = 0.05;
 packet_size = 1;
 injection_rate_uses_flits=1;
 
 topology = fattree;
 
 
-k  = 4;
+k  = 8;
 n  = 3;
 
 watch_out=-;
