@@ -55,7 +55,7 @@ if RUN_2P1:
 # Create configs for Part 2.2
 if CREATE_CONFIG_2P2:
     configfiles = []
-    injection_rate = ["0.10", "0.15", "0.20", "0.25", "0.30", "0.35", "0.40", "0.45", "0.50", "0.55"]
+    injection_rate = ["1.00", "0.95", "0.90", "0.85", "0.80", "0.75", "0.70", "0.65", "0.60", "0.65"]
     tapering = ["1", "2", "4"]
     traffic = ["uniform", "transpose", "bitcomp"]
 
