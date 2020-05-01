@@ -253,6 +253,7 @@ void tree4_nca( const Router *r, const Flit *f,
   outputs->AddRange( out_port, vcBegin, vcEnd );
 }
 
+
 // ============================================================
 //  FATTREE: Nearest Common Ancestor w/ Random  Routing Up
 // ===
@@ -291,7 +292,8 @@ void fattree_nca( const Router *r, const Flit *f,
     int routers_per_neighborhood = powi(gK,gN-router_depth-1);
     int router_neighborhood = pos/routers_per_neighborhood; //coverage of this tree
     int router_coverage = powi(gK, gN-router_depth);  //span of the tree from this router
-    
+
+    bool valid_channel = false;
 
     //NCA reached going down
     if(dest <(router_neighborhood+1)* router_coverage && 
@@ -300,16 +302,27 @@ void fattree_nca( const Router *r, const Flit *f,
 
       //ejection
       if(router_depth == gN-1){
-	out_port = dest%gK;
+        out_port = dest%gK;
       } else {	
-	//find the down port for the destination
-	int router_branch_coverage = powi(gK, gN-(router_depth+1)); 
-	out_port = (dest-router_neighborhood* router_coverage)/router_branch_coverage;
+        //find the down port for the destination
+        int router_branch_coverage = powi(gK, gN-(router_depth+1)); 
+        out_port = (dest-router_neighborhood* router_coverage)/router_branch_coverage;
       }
     } else {
       //up ports are numbered last
       assert(in_channel<gK);//came from a up channel
-      out_port = gK+RandomInt(gK-1);
+
+      // if layer before the top
+      if(router_depth == 1){
+        // if out_port is one of the ones that are restricted, choose a different one
+        int random_val = RandomInt(gK-1);
+        if (random_val) { // if non zero
+          random_val = random_val / gT;
+        }
+        out_port = gK+random_val;
+      }else{
+        out_port = gK+RandomInt(gK-1);
+      }
     }
   }  
   outputs->Clear( );

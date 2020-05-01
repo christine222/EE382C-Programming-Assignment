@@ -71,8 +71,9 @@ void FatTree::_ComputeSize( const Configuration& config )
 
   _k = config.GetInt( "k" );
   _n = config.GetInt( "n" );
+  _t = config.GetInt( "t" );
    
-  gK = _k; gN = _n;
+  gK = _k; gN = _n; gT = _t;
   
   _nodes = powi( _k, _n );
 
@@ -93,11 +94,13 @@ void FatTree::RegisterRoutingFunctions() {
 void FatTree::_BuildNet( const Configuration& config )
 {
  cout << "Fat Tree" << endl;
+
   cout << " k = " << _k << " levels = " << _n << endl;
   cout << " each switch - total radix =  "<< 2*_k << endl;
   cout << " # of switches = "<<  _size << endl;
   cout << " # of channels = "<<  _channels << endl;
   cout << " # of nodes ( size of network ) = " << _nodes << endl;
+  cout << " tapering factor = " << _t << endl;
 
 
   // Number of router positions at each depth of the network
@@ -212,14 +215,13 @@ void FatTree::_BuildNet( const Configuration& config )
       int neighborhood = pos/routers_per_neighborhood;
       int neighborhood_pos = pos%routers_per_neighborhood;
       for ( port = 0; port < _k; ++port ) {
-	int link = 
-	  ((level+1)*chan_per_level - chan_per_direction)  //which levellevel
-	  +neighborhood*level_offset   //region in level
-	  +port*routers_per_branch*gK  //sub region in region
-	  +(neighborhood_pos)%routers_per_branch*gK  //router in subregion
-	  +(neighborhood_pos)/routers_per_branch; //port on router
-
-	_Router(level, pos)->AddInputChannel( _chan[link],
+        int link = 
+        ((level+1)*chan_per_level - chan_per_direction)  //which levellevel
+    	  +neighborhood*level_offset   //region in level
+    	  +port*routers_per_branch*gK  //sub region in region
+    	  +(neighborhood_pos)%routers_per_branch*gK  //router in subregion
+    	  +(neighborhood_pos)/routers_per_branch; //port on router
+        _Router(level, pos)->AddInputChannel( _chan[link],
 					      _chan_cred[link] );
 #ifdef FATTREE_DEBUG
 	cout<<_Router(level, pos)->Name()<<" "
