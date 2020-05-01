@@ -4,8 +4,8 @@ import string
 import os
 
 CREATE_CONFIG_2P1 = True 
-RUN_2P1 = False
-CREATE_CONFIG_2P2 = True
+RUN_2P1 = True 
+CREATE_CONFIG_2P2 = False
 RUN_2P2 = False
 
 def generate_fattree_configs(configfiles, injection_rate, tapering, traffic):
