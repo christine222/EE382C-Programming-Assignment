@@ -388,35 +388,21 @@ void fattree_anca( const Router *r, const Flit *f,
       //up ports are numbered last
       assert(in_channel<gK);//came from a up channel
 
-      // if layer before the top
-      if(router_depth == 1){
-        out_port = gK;
+      out_port = gK;
+      int random1 = RandomInt(gK-1); // Chose two ports out of the possible at random, compare loads, choose one.
+      int random2 = RandomInt(gK-1);
 
-        int random1 = RandomInt(gK-1); // Chose two ports out of the possible at random, compare loads, choose one.
-        int random2 = RandomInt(gK-1);
+      if (random1 && router_depth == 1){
+        random1 = random1 / gT;
+      }
+      if (random2 && router_depth == 1){
+        random2 = random2 / gT;
+      }
 
-        if(random1){
-          random1 = random1 / gT;
-        }
-        if(random2){
-          random2 = random2 / gT;
-        }
-
-        if (r->GetUsedCredit(out_port + random1) > r->GetUsedCredit(out_port + random2)){
-          out_port = out_port + random2;
-        }else{
-          out_port =  out_port + random1;
-        }
-
+      if (r->GetUsedCredit(out_port + random1) > r->GetUsedCredit(out_port + random2)){
+        out_port = out_port + random2;
       }else{
-        out_port = gK;
-        int random1 = RandomInt(gK-1); // Chose two ports out of the possible at random, compare loads, choose one.
-        int random2 = RandomInt(gK-1);
-        if (r->GetUsedCredit(out_port + random1) > r->GetUsedCredit(out_port + random2)){
-          out_port = out_port + random2;
-        }else{
-          out_port =  out_port + random1;
-        }
+        out_port =  out_port + random1;
       }
     }
   }  
